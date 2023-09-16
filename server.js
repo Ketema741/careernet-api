@@ -1,7 +1,7 @@
 const express = require("express");
 require('dotenv').config();
 
-const connectDB = require("./config/db");
+const connectDB = require("./src/config/db");
 const cors = require("cors");
 
 const app = express();
@@ -21,11 +21,11 @@ app.get("/", (req, res) => {
 const PORT = process.env.PORT;
 
 // Define Routes
-app.use("/api/auth-user", require("./routes/Auth"));
-app.use("/api/blogs", require("./routes/blogs"));
-app.use("/api/jobs", require("./routes/jobs"));
-app.use("/api/internships", require("./routes/internships"));
-app.use("/api/users", require("./routes/users"));
+app.use("/api/auth-user", require("./src/routes/Auth"));
+app.use("/api/blogs", require("./src/routes/blogs"));
+app.use("/api/jobs", require("./src/routes/jobs"));
+app.use("/api/internships", require("./src/routes/internships"));
+app.use("/api/users", require("./src/routes/users"));
 
 app.listen(PORT, () => {
   console.log(`server started at port: ${PORT}`); 
